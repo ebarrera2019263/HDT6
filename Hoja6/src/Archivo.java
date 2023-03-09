@@ -11,7 +11,7 @@ public class Archivo {
         boolean read = false;
         try{
             read = true;
-            File file = new File("ListadoProducto.txt");
+            File file = new File("D:\\HDT6\\Hoja6\\src\\ListadoProducto.txt");
             Scanner reader = new Scanner(file);
             while(reader.hasNextLine()){
                 String dato = reader.nextLine();

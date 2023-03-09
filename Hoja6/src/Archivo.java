@@ -11,7 +11,7 @@ public class Archivo {
         boolean read = false;
         try{
             read = true;
-            File file = new File("D:\\HDT6\\Hoja6\\src\\ListadoProducto.txt");
+            File file = new File("D:\\HDT6\\Hoja6\\src\\ListadoProducto.txt"); //Aqui se debe ingresar la ruta del archivo
             Scanner reader = new Scanner(file);
             while(reader.hasNextLine()){
                 String dato = reader.nextLine();

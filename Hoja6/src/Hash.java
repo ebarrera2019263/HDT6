@@ -1,14 +1,20 @@
 import java.util.ArrayList;
-import java.util.TreeMap;
-import java.util.Map.Entry;
+import java.util.HashMap;
 import java.util.*;
-public class Tree {
-    TreeMap<Integer, String> inventario = new TreeMap<Integer, String>();
-    TreeMap<Integer, String> categoria = new TreeMap<Integer, String>();
-    TreeMap<Integer, Integer> cantidad = new TreeMap<Integer, Integer>();
+import java.util.Map;
+import java.util.Map.Entry;
+/**
+ * @author Jorge Lopez
+ *
+ */
+public class Hash extends MapF{
+    Map<Integer, String> inventario= new HashMap<Integer, String>();
+    Map<Integer, String> categoria= new HashMap<Integer, String>();
+    Map<Integer, Integer> cantidad= new HashMap<Integer,Integer>();
     ArrayList<String> miArray = new ArrayList<String>();
-
-    public Tree(Archivo miArchivo){
+    View miVista = new View();
+    String dato ="";
+    public Hash(Archivo miArchivo){
         miArray = miArchivo.getArchivo();
         int x = 0;
         for (int i=0; i<miArray.size(); i = i+2){

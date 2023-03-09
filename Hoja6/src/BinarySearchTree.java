@@ -6,7 +6,6 @@ import java.util.Comparator;
  *
  */
 public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
-
     private int count;
     private TreeNode<K, V> root;
     private Comparator<K> keyComparator;
@@ -16,8 +15,6 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
         root = null;
         count = 0;
     }
-
-
     @Override
     public void insert(K id, V value) {
 
@@ -28,7 +25,6 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
             internalInsert(root, id, value);
         }
     }
-
     @Override
     public V delete(K id) {
         if (!isEmpty()) {
@@ -131,9 +127,7 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
                         count--;
                         return tempValue;
 
-
                     }
-
 
                 }
 
@@ -142,22 +136,18 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
 
         return null;
     }
-
     @Override
     public V find(K id) {
         return internalFind(root, id);
     }
-
     @Override
     public int count() {
         return count;
     }
-
     @Override
     public boolean isEmpty() {
         return count == 0;
     }
-
     @Override
     public ArrayList<V> getElements() {
         ArrayList<V> list = new ArrayList<V>();
@@ -166,24 +156,18 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
 
         return list;
     }
-
     @Override
     public void inOrder(ITreeTraversal<V> traversal) {
         internalInOrder(root, traversal);
     }
-
     @Override
     public void preOrder(ITreeTraversal<V> traversal) {
         internalPreOrder(root, traversal);
-
     }
-
     @Override
     public void postOrder(ITreeTraversal<V> traversal) {
         internalPostOrder(root, traversal);
     }
-
-
     private void internalInsert(TreeNode<K, V> actual, K id, V value) {
 
         int result = keyComparator.compare(actual.getId(), id);
@@ -211,7 +195,6 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
         }
 
     }
-
     private void internalInOrder(TreeNode<K, V> actual, ITreeTraversal<V> traversal) {
         if (actual != null) {
             internalInOrder(actual.getLeft(), traversal);
@@ -221,7 +204,6 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
             internalInOrder(actual.getRight(), traversal);
         }
     }
-
     private void internalPreOrder(TreeNode<K, V> actual, ITreeTraversal<V> traversal) {
         if (actual != null) {
             traversal.Walk(actual.getValue());
@@ -231,7 +213,6 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
             internalPreOrder(actual.getRight(), traversal);
         }
     }
-
     private void internalPostOrder(TreeNode<K, V> actual, ITreeTraversal<V> traversal) {
         if (actual != null) {
 
@@ -242,7 +223,6 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
             traversal.Walk(actual.getValue());
         }
     }
-
     private V internalFind(TreeNode<K, V> actual, K id) {
         if (actual != null) {
             int result = keyComparator.compare(actual.getId(), id);
@@ -259,7 +239,6 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
             return null;
         }
     }
-
     private void internalGetElements(ArrayList<V> list, TreeNode<K, V> actual) {
         if (actual != null) {
             internalGetElements(list, actual.getLeft());
@@ -269,7 +248,6 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
             internalGetElements(list, actual.getRight());
         }
     }
-
     private V internalDelete(TreeNode<K, V> actual, K id, boolean isLeft) {
         if (actual != null) {
             int result = keyComparator.compare(actual.getId(), id);
@@ -384,24 +362,11 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
 
                         count--;
                         return tempValue;
-
-
                     }
-
-
-
-
-
-
-
-
                 }
-
             }
-
         } else {
             return null;
         }
     }
-
 }
